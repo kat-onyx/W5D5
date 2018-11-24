@@ -7,7 +7,7 @@ const reader = readline.createInterface({
 
 function addNumbers(sum, numsLeft, completionCallback) {
   if (numsLeft === 0) {
-    console.log("Hit the base case if block!");
+    // console.log("Hit the base case if block!");
     completionCallback(sum);
   } else if (numsLeft > 0) {
     console.log("NumsLeft: ", numsLeft);
@@ -16,8 +16,10 @@ function addNumbers(sum, numsLeft, completionCallback) {
       sum += num1;
       console.log("Partial sum: ", sum);
       addNumbers(sum, numsLeft-1, completionCallback);
+      // console.log("WE MADE IT OUT PHEW", numsLeft);
     });
   }
+  // console.log("ANOTHER NARROW ESCAPE", numsLeft);
 }
 
 addNumbers(0, 3, function(sum) {
